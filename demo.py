@@ -499,7 +499,7 @@ def run_video_demo(args):
         save_name = os.path.join(output_path, save_name)
         if not args.image_based:
             print(f'Saving result video to {save_name}')
-            images_to_video(img_folder=output_img_folder, output_vid_file=save_name)
+            #images_to_video(img_folder=output_img_folder, output_vid_file=save_name)
         # shutil.rmtree(output_img_folder)
 
     # shutil.rmtree(image_folder)
