@@ -97,7 +97,7 @@ def video_to_images(vid_file, img_folder=None, return_info=False):
         img_folder = osp.join(osp.expanduser('~'), 'tmp', osp.basename(vid_file).replace('.', '_'))
         # img_folder = osp.join('/tmp', osp.basename(vid_file).replace('.', '_'))
 
-    print(img_folder)
+    #print(img_folder)
     os.makedirs(img_folder, exist_ok=True)
 
     command = ['ffmpeg',
@@ -105,14 +105,14 @@ def video_to_images(vid_file, img_folder=None, return_info=False):
                '-f', 'image2',
                '-v', 'error',
                f'{img_folder}/%06d.png']
-    print(f'Running \"{" ".join(command)}\"')
+    #print(f'Running \"{" ".join(command)}\"')
 
     try:
         subprocess.call(command)
     except:
         subprocess.call(f'{" ".join(command)}', shell=True)
 
-    print(f'Images saved to \"{img_folder}\"')
+    #print(f'Images saved to \"{img_folder}\"')
 
     img_shape = cv2.imread(osp.join(img_folder, '000001.png')).shape
 
