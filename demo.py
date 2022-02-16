@@ -184,7 +184,7 @@ def run_video_demo(args):
 
     os.makedirs(output_path, exist_ok=True)
 
-    print(f'Input video number of frames {num_frames}')
+    #print(f'Input video number of frames {num_frames}')
     if not args.image_based:
         orig_height, orig_width = img_shape[:2]
 
@@ -244,7 +244,7 @@ def run_video_demo(args):
         model.load_state_dict(checkpoint['model'], strict=True)
 
     model.eval()
-    print(f'Loaded pretrained weights from \"{args.checkpoint}\"')
+    #print(f'Loaded pretrained weights from \"{args.checkpoint}\"')
 
     # ========= Run pred on each person ========= #
     if args.recon_result_file:
@@ -378,10 +378,10 @@ def run_video_demo(args):
         end = time.time()
         fps = num_frames / (end - pred_time)
 
-        print(f'FPS: {fps:.2f}')
+        #print(f'FPS: {fps:.2f}')
         total_time = time.time() - total_time
-        print(f'Total time spent: {total_time:.2f} seconds (including model loading time).')
-        print(f'Total FPS (including model loading time): {num_frames / total_time:.2f}.')
+        #print(f'Total time spent: {total_time:.2f} seconds (including model loading time).')
+        #print(f'Total FPS (including model loading time): {num_frames / total_time:.2f}.')
 
         print(f'Saving output results to \"{os.path.join(output_path, "output.pkl")}\".')
 
