@@ -394,8 +394,10 @@ def run_video_demo(args):
         else:
             renderer = PyRenderer(resolution=(orig_width, orig_height))
 
-        output_img_folder = os.path.join(output_path, osp.split(image_folder)[-1] + '_output')
-        os.makedirs(output_img_folder, exist_ok=True)
+        #output_img_folder = os.path.join(output_path, osp.split(image_folder)[-1] + '_output')
+        #os.makedirs(output_img_folder, exist_ok=True)
+        os.makedirs('images', exist_ok=True)  ###
+        output_img_folder = 'images'  ###
 
         print(f'Rendering output video, writing frames to {output_img_folder}')
 
@@ -497,13 +499,13 @@ def run_video_demo(args):
         vid_name = osp.split(image_folder)[-1] if args.image_folder is not None else os.path.basename(video_file)
         save_name = f'{vid_name.replace(".mp4", "")}_result.mp4'
         save_name = os.path.join(output_path, save_name)
-        if not args.image_based:
-            print(f'Saving result video to {save_name}')
-            images_to_video(img_folder=output_img_folder, output_vid_file=save_name)
+        #if not args.image_based:
+            #print(f'Saving result video to {save_name}')
+            #images_to_video(img_folder=output_img_folder, output_vid_file=save_name)
         # shutil.rmtree(output_img_folder)
 
     # shutil.rmtree(image_folder)
-    print('================= END =================')
+    #print('================= END =================')
 
 
 if __name__ == '__main__':
